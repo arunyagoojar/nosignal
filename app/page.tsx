@@ -166,6 +166,10 @@ export default function Home() {
             ))}
           </section>
           <section className="catalogue-box black-bg">
+            <div className="catalogue-title2">
+              <h2>Divine melodies for meditation</h2>
+              <p>Experience serenity with heavenly tunes.</p>
+            </div>
             {cardData.slice(9, 14).map((card, index) => (
               <div
                 key={index}
@@ -185,10 +189,6 @@ export default function Home() {
                 <p className="cloc">{card.zentext}</p>
               </div>
             ))}
-            <div className="catalogue-title2">
-              <h2>Divine melodies for meditation</h2>
-              <p>Experience serenity with heavenly tunes.</p>
-            </div>
           </section>
           <section className="catalogue-box black-bg">
             <div className="catalogue-title catalogue-title2">
