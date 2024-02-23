@@ -86,45 +86,47 @@ export default function Home() {
     <main className="mainbg">
       <Image className="bg" src={bgImage} alt="bg" priority style={{ opacity: uiOpacity.bgOpacity, transition: 'opacity 0.5s ease-in-out' }}></Image>
       <section className="zencontent">
-        <button className="zentitle">
-          Zen Sounds
-        </button>
-        <h1 className="zentitle2" style={{ opacity: uiOpacity.textOpacity, transition: 'opacity 0.5s ease-in-out' }}>{currentZenTitle}</h1>
-        <p className="zentext" style={{ opacity: uiOpacity.textOpacity, transition: 'opacity 0.5s ease-in-out' }}>{currentZenText}</p>
-        <button className="playbutton" onClick={handlePlayPause}>
-          {isPlaying ? 'Stop Surrounding' : 'Set Surrounding'}
-        </button>
-        <label className="slider">
-          <input
-            type="range"
-            min="0"
-            max="1"
-            step="0.01"
-            value={volume}
-            className='level'
-            onChange={event => setVolume(parseFloat(event.target.value))}
+        <div className='zengrad'>
+          <button className="zentitle">
+            Zen Sounds
+          </button>
+          <h1 className="zentitle2" style={{ opacity: uiOpacity.textOpacity, transition: 'opacity 0.5s ease-in-out' }}>{currentZenTitle}</h1>
+          <p className="zentext" style={{ opacity: uiOpacity.textOpacity, transition: 'opacity 0.5s ease-in-out' }}>{currentZenText}</p>
+          <button className="playbutton" onClick={handlePlayPause}>
+            {isPlaying ? 'Stop Surrounding' : 'Set Surrounding'}
+          </button>
+          <label className="slider">
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              value={volume}
+              className='level'
+              onChange={event => setVolume(parseFloat(event.target.value))}
+            />
+          </label>
+          <DynamicReactPlayer
+            ref={playerRef}
+            url={currentAudio}
+            height={0}
+            width={0}
+            loop={true}
+            controls={false}
+            playing={isPlaying}
+            volume={volume}
+            light={false}
+            pip={false}
           />
-        </label>
-        <DynamicReactPlayer
-          ref={playerRef}
-          url={currentAudio}
-          height={0}
-          width={0}
-          loop={true}
-          controls={false}
-          playing={isPlaying}
-          volume={volume}
-          light={false}
-          pip={false}
-        />
-        <Image className="arrow" src={Arrow} alt="arrow" />
-        <section className="catalogue-box" id="catalogue">
-          <div className="catalogue-title">
-            <h2>Choose your path to relaxation</h2>
-            <p>Show your support with a GitHub star</p>
-            <a className="catalogue-git" href="https://github.com/arunyagoojar/Calm" target="_blank">github/arunyagoojar</a>
-          </div>
-          <div className="cards">
+          <Image className="arrow" src={Arrow} alt="arrow" />
+        </div>
+        <div className="gradient-blur">
+          <section className="catalogue-box" id="catalogue">
+            <div className="catalogue-title">
+              <h2>Choose your path to relaxation</h2>
+              <p>Show your support with a GitHub star</p>
+              <a className="catalogue-git" href="https://github.com/arunyagoojar/Calm" target="_blank">github/arunyagoojar</a>
+            </div>
             {cardData.slice(0, 3).map((card, index) => (
               <div
                 key={index}
@@ -137,10 +139,6 @@ export default function Home() {
                 <p className="cloc">{card.zentext}</p>
               </div>
             ))}
-          </div>
-        </section>
-        <section className="catalogue-box" style={{ paddingTop: 80 }} id="catalogue">
-          <div className="cards" style={{ gap: 25 }}>
             {cardData.slice(13, 17).map((card, index) => (
               <div
                 key={index}
@@ -153,10 +151,8 @@ export default function Home() {
                 <p className="cloc">{card.zentext}</p>
               </div>
             ))}
-          </div>
-        </section>
-        <section className="catalogue-box black-bg">
-          <div className="cards">
+          </section>
+          <section className="catalogue-box black-bg">
             {cardData.slice(3, 6).map((card, index) => (
               <div
                 key={index}
@@ -169,20 +165,18 @@ export default function Home() {
                 <p className="cloc">{card.zentext}</p>
               </div>
             ))}
-          </div>
-          <div className="catalogue-title catalogue-title2">
-            <h2>Harmonic echoes of the universe</h2>
-            <p>Featuring tranquil soundscapes from
-              <a className="catalogue-git" href="https://www.youtube.com/channel/UCfyUjw4uv_LLMSWtB7Nszig" target="_blank" style={{ paddingLeft: 5 }}> @dhePerissann</a>
-            </p>
-          </div>
-        </section>
-        <section className="catalogue-box" id="catalogue">
-          <div className="catalogue-title">
-            <h2>Cinematic Sound Journeys</h2>
-            <p>Discover the sonic realms of fictional universes.</p>
-          </div>
-          <div className="cards">
+            <div className="catalogue-title catalogue-title2">
+              <h2>Harmonic echoes of the universe</h2>
+              <p>Featuring tranquil soundscapes from
+                <a className="catalogue-git" href="https://www.youtube.com/channel/UCfyUjw4uv_LLMSWtB7Nszig" target="_blank" style={{ paddingLeft: 5 }}> @dhePerissann</a>
+              </p>
+            </div>
+          </section>
+          <section className="catalogue-box" id="catalogue">
+            <div className="catalogue-title">
+              <h2>Cinematic Sound Journeys</h2>
+              <p>Discover the sonic realms of fictional universes.</p>
+            </div>
             {cardData.slice(6, 9).map((card, index) => (
               <div
                 key={index}
@@ -195,10 +189,6 @@ export default function Home() {
                 <p className="cloc">{card.zentext}</p>
               </div>
             ))}
-          </div>
-        </section>
-        <section className="catalogue-box" style={{ paddingTop: 80 }} id="catalogue">
-          <div className="cards" style={{ gap: 25 }}>
             {cardData.slice(9, 13).map((card, index) => (
               <div
                 key={index}
@@ -211,11 +201,9 @@ export default function Home() {
                 <p className="cloc">{card.zentext}</p>
               </div>
             ))}
-          </div>
-        </section>
+          </section>
+        </div>
       </section>
-      <div className="gradient-blur">
-      </div>
     </main >
   );
 }
