@@ -131,9 +131,16 @@ export default function Home() {
               <div
                 key={index}
                 className="card"
-                style={{ backgroundImage: `url(${card.image.src})`, position: 'relative' }}
+                style={{ position: 'relative' }}
                 onClick={() => handleCardClick(card.image, card.zentitle, card.zentext, card.audiofile)}
               >
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  className='card-img-top'
+                  layout="fill"
+                  objectFit="cover"
+                />
                 <div className="overlay" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0,0,0,0.6)', zIndex: 0 }}></div>
                 <p className="ctitle"> {card.title} </p>
                 <p className="cloc">{card.zentext}</p>
@@ -143,9 +150,16 @@ export default function Home() {
               <div
                 key={index}
                 className="card"
-                style={{ backgroundImage: `url(${card.image.src})`, position: 'relative' }}
+                style={{ position: 'relative' }}
                 onClick={() => handleCardClick(card.image, card.zentitle, card.zentext, card.audiofile)}
               >
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  className='card-img-top'
+                  layout="fill"
+                  objectFit="cover"
+                />
                 <div className="overlay" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0,0,0,0.6)', zIndex: 0 }}></div>
                 <p className="ctitle"> {card.title} </p>
                 <p className="cloc">{card.zentext}</p>
@@ -157,9 +171,16 @@ export default function Home() {
               <div
                 key={index}
                 className="card"
-                style={{ backgroundImage: `url(${card.image.src})`, position: 'relative' }}
+                style={{ position: 'relative' }}
                 onClick={() => handleCardClick(card.image, card.zentitle, card.zentext, card.audiofile)}
               >
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  className='card-img-top'
+                  layout="fill"
+                  objectFit="cover"
+                />
                 <div className="overlay" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0,0,0,0.6)', zIndex: 0 }}></div>
                 <p className="ctitle"> {card.title} </p>
                 <p className="cloc">{card.zentext}</p>
@@ -181,9 +202,16 @@ export default function Home() {
               <div
                 key={index}
                 className="card"
-                style={{ backgroundImage: `url(${card.image.src})`, position: 'relative' }}
+                style={{ position: 'relative' }}
                 onClick={() => handleCardClick(card.image, card.zentitle, card.zentext, card.audiofile)}
               >
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  className='card-img-top'
+                  layout="fill"
+                  objectFit="cover"
+                />
                 <div className="overlay" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0,0,0,0.6)', zIndex: 0 }}></div>
                 <p className="ctitle"> {card.title} </p>
                 <p className="cloc">{card.zentext}</p>
@@ -193,9 +221,16 @@ export default function Home() {
               <div
                 key={index}
                 className="card"
-                style={{ backgroundImage: `url(${card.image.src})`, position: 'relative' }}
+                style={{ position: 'relative' }}
                 onClick={() => handleCardClick(card.image, card.zentitle, card.zentext, card.audiofile)}
               >
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  layout="fill"
+                  className='card-img-top'
+                  objectFit="cover"
+                />
                 <div className="overlay" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0,0,0,0.6)', zIndex: 0 }}></div>
                 <p className="ctitle"> {card.title} </p>
                 <p className="cloc">{card.zentext}</p>
