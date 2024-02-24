@@ -166,7 +166,7 @@ export default function Home() {
             ))}
           </section>
           <section className="catalogue-box black-bg">
-            <div className="catalogue-title2">
+            <div className="catalogue-title">
               <h2>Divine melodies for meditation</h2>
               <p>Experience serenity with heavenly tunes.</p>
             </div>
@@ -191,7 +191,7 @@ export default function Home() {
             ))}
           </section>
           <section className="catalogue-box black-bg">
-            <div className="catalogue-title catalogue-title2">
+            <div className="catalogue-title">
               <h2>Harmonic echoes of the universe</h2>
               <p>Featuring tranquil soundscapes from
                 <a className="catalogue-git" href="https://www.youtube.com/channel/UCfyUjw4uv_LLMSWtB7Nszig" target="_blank" style={{ paddingLeft: 5 }}> @dhePerissann</a>
