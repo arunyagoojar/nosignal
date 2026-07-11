@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import GradualBlur from 'gradualblur';
 import { BackgroundLayer } from './BackgroundLayer';
 import { ParticleLayer } from './ParticleLayer';
