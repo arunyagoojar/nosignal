@@ -9,6 +9,18 @@ export function BackgroundLayer({ imageSrc }: BackgroundLayerProps) {
   const [slots, setSlots] = useState({ a: imageSrc, b: imageSrc });
   const [activeSlot, setActiveSlot] = useState<'a' | 'b'>('a');
 
+  // Aggressively preload the incoming image to ensure instant responsiveness
+  useEffect(() => {
+    let link = document.querySelector(`link[rel="preload"][href="${imageSrc}"]`) as HTMLLinkElement;
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = imageSrc;
+      document.head.appendChild(link);
+    }
+  }, [imageSrc]);
+
   useEffect(() => {
     // Load the new image into the inactive slot, then swap
     const inactiveSlot = activeSlot === 'a' ? 'b' : 'a';

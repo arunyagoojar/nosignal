@@ -100,6 +100,11 @@ export function SoundscapeMenu({ isOpen, currentIndex, onSelect, onClose }: Soun
                 <button
                   key={scene.id}
                   onClick={() => { onSelect(idx); onClose(); }}
+                  onMouseEnter={() => {
+                    // Prefetch the full-res background image on hover for instant responsiveness
+                    const img = new window.Image();
+                    img.src = scene.image;
+                  }}
                   className="group relative w-full overflow-hidden focus:outline-none"
                   style={{
                     aspectRatio: '16 / 9',
@@ -111,9 +116,9 @@ export function SoundscapeMenu({ isOpen, currentIndex, onSelect, onClose }: Soun
                     transition: 'border-color 0.25s ease, box-shadow 0.25s ease',
                   }}
                 >
-                  {/* Thumbnail — transition targeted to prevent mount/render flicker */}
+                  {/* Thumbnail — highly optimized 20KB WebP image */}
                   <img
-                    src={scene.image}
+                    src={scene.thumb}
                     alt={scene.title}
                     className="absolute inset-0 w-full h-full object-cover transition-[transform,filter] duration-500 ease group-hover:scale-105 group-hover:blur-md"
                   />
